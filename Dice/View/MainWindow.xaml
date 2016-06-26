@@ -1,0 +1,40 @@
+﻿<Window x:Class="Dice.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dice.View"
+        xmlns:viewModel="clr-namespace:Dice.ViewModel"
+        mc:Ignorable="d"
+        Title="Zagrajmy w kości" Height="350" Width="525">
+    <Window.DataContext>
+        <viewModel:MainPageViewModel/>
+    </Window.DataContext>
+    <Window.InputBindings>
+        <KeyBinding Key="N" Modifiers="Control" Command="{Binding NewGameCommand}"/>
+        <KeyBinding Key="S" Modifiers="Control" Command="{Binding SaveGameCommand}"/>
+        <KeyBinding Key="O" Modifiers="Control" Command="{Binding LoadGameCommand}"/>
+        <KeyBinding Key="Q" Modifiers="Control" Command="{Binding CheckDiceStateCommand}"/>
+    </Window.InputBindings>
+    <StackPanel>
+        <Menu>
+            <MenuItem Header="Plik">
+                <MenuItem Header="Nowa gra" Command="{Binding NewGameCommand}" InputGestureText="Ctrl+N"></MenuItem>
+                <Separator/>
+                <MenuItem Header="Wczytaj grę" Command="{Binding LoadGameCommand}" InputGestureText="Ctrl+O"></MenuItem>
+                <MenuItem Header="Zapisz grę" Command="{Binding SaveGameCommand}" InputGestureText="Ctrl+S"></MenuItem>
+                <Separator/>
+                <MenuItem Header="Zamknij aplikację" Command="{Binding CloseApplicationCommand}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Narzędzia">
+                <MenuItem Header="Sprawdź układ kości" Command="{Binding CheckDiceStateCommand}" InputGestureText="Ctrl+Q"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Pomoc">
+                <MenuItem Header="O aplikacji" Command="{Binding AboutApplicationCommand}"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid>
+
+        </Grid>
+    </StackPanel>
+</Window>
