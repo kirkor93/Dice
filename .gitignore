@@ -210,3 +210,6 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+Dice_Unity/Library/
+Dice_Unity/Dice_Unity.Editor.csproj
+Dice_Unity/Dice_Unity.sln
